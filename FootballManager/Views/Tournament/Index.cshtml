@@ -1,0 +1,82 @@
+﻿@model FootballManager.Models.TournamentViewModel
+@{
+    ViewBag.Title = "Index";
+}
+<html>
+<head>
+    <div style="text-align:  center; margin-left:auto; margin-right:auto;">
+        <h2>Tournaments</h2>
+    </div>
+    <div class="caption">
+        <img alt="Cover" src="@Model.LaLigaModels[0].ImageUrl" width="150" height="150" />
+        Begin: @Html.TextBoxFor(m => m.LaLigaModels[0].StartDate, "{0:dd/MM/yyyy}")
+        End: @Html.TextBoxFor(m => m.LaLigaModels[0].EndDate, "{0:dd/MM/yyyy}")
+    </div>
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <thead>
+            <th class="col-sm-1" align="right">Name</th>
+            <th class="col-sm-1" align="right">Pl</th>
+            <th class="col-sm-1" align="right">W</th>
+            <th class="col-sm-1" align="right">D</th>
+            <th class="col-sm-1" align="right">L</th>
+            <th class="col-sm-1" align="right">F</th>
+            <th class="col-sm-1" align="right">A</th>
+            <th class="col-sm-1" align="right">GD</th>
+            <th class="col-sm-1" align="right">@Html.ActionLink("Pts", "Index", new { sortOrder = ViewBag.SortParm })</th>
+            </thead>
+<tr>
+            @foreach (var item in Model.LaLigaModels)
+            {
+                <tbody>
+            <tr>
+                <td align="left"><img alt="Cover" src="@item.TeamImageUrl" width="20" height="20" />  @item.TeamName</td>
+                <td align="left">@item.Played</td>
+                <td align="left">@item.Wins</td>
+                <td align="left">@item.Draws</td>
+                <td align="left">@item.Loses</td>
+                <td align="left">@item.GoalScored</td>
+                <td align="left">@item.GoalMissed</td>
+                <td align="left">@item.GoalScored-@item.GoalMissed</td>
+                <td align="left">@item.Points</td>
+            </tr></tbody>
+            }
+        </table>
+        <br />
+        <div class="caption">
+            <img alt="Cover" src="@Model.UEFAModels[0].ImageUrl" width="150" height="150" />
+            Begin: @Html.TextBoxFor(m => m.UEFAModels[0].StartDate, "{0:dd/MM/yyyy}")
+            End: @Html.TextBoxFor(m => m.UEFAModels[0].EndDate, "{0:dd/MM/yyyy}")
+        </div>
+
+        <table class="table" align="left">
+            <tr>
+                <th class="col-sm-1" align="right">Name</th>
+                <th class="col-sm-1" align="right"class="col-sm-1" align="right">Pl</th>
+                <th class="col-sm-1" align="right">W</th>
+                <th class="col-sm-1" align="right">D</th>
+                <th class="col-sm-1" align="right">L</th>
+                <th class="col-sm-1" align="right">F</th>
+                <th class="col-sm-1" align="right">A</th>
+                <th class="col-sm-1" align="right">GD</th>
+                <th class="col-sm-1" align="right">Pts</th>
+            <tr>
+                @foreach (var item in Model.UEFAModels)
+            {
+                <tr>
+                    <td align="left"><img alt="Cover" src="@item.TeamImageUrl" width="20" height="20" />  @item.TeamName</td>
+                    <td align="left">@item.Played</td>
+                    <td align="left">@item.Wins</td>
+                    <td align="left">@item.Draws</td>
+                    <td align="left">@item.Loses</td>
+                    <td align="left">@item.GoalScored</td>
+                    <td align="left">@item.GoalMissed</td>
+                    <td align="left">@item.GoalScored-@item.GoalMissed</td>
+                    <td align="left">@item.Points</td>
+                </tr>
+                }
+            </table>
+        </body>
+    </html>

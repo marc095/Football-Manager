@@ -1,0 +1,56 @@
+﻿@model IEnumerable<FootballManager.Domain.Entities.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div style="text-align:  center; margin-left:auto; margin-right:auto;">
+    <h2>Players</h2></div>
+<div>
+    @using (Ajax.BeginForm("PlayerSearch", new AjaxOptions { UpdateTargetId = "result" , LoadingElementId = "loading", LoadingElementDuration = 5000}))
+    {
+        <input type="text" name="playerName" />
+        <input type="submit" value="Search" />
+    }
+  @*  <img id="loading" src="@Url.Content("~/Content/img/loading.jpg")" style="display:none" />*@
+    <div id="result"></div>
+</div>
+
+    @*@using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <label>Find</label> @Html.TextBox("SearchString") <br />
+            <input type="submit" class="btn btn-success" value="Filter" width="20" />
+        </div>
+
+    }*@
+    <table class="table">
+        <tr>
+            <th class="col-sm-1" align="right">Photo</th>
+            <th class="col-sm-1" align="right">Name</th>
+            <th class="col-sm-1" align="right">Surname</th>
+            <th class="col-sm-1" align="right">Country</th>
+            <th class="col-sm-1" align="right">Age</th>
+            <th class="col-sm-1" align="right">Number</th>
+            <th class="col-sm-1" align="right">Team</th>
+            <th class="col-sm-1" align="right">Birthday</th>
+            <th></th>
+            <th></th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="left"><img alt="Cover" src="@item.ImageUrl" width="200" height="200" /></td>
+                <td align="left">@item.Name</td>
+                <td align="left">@item.Surname</td>
+                <td align="left">@item.Country</td>
+            <td align="left">@item.Age</td>
+            <td align="left">@item.PlayerNumber</td>
+            <td align="left">@item.Team.Name</td>
+            <td align="left">@item.DayBirth</td>
+            <td align="left">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+            <td align="left">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</td>
+        </tr>
+        }
+    </table>
+    <p>@Html.ActionLink("Add new player", "Create")</p>
+    <p>@Html.ActionLink("Teams", "Index", "Team")</p>

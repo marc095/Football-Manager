@@ -1,0 +1,11 @@
+﻿@model  IEnumerable<FootballManager.Domain.Entities.Player>
+<div id="searchresults">
+    <h3>All players from Team: @Model.First().Team.Name</h3>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name</li>
+        }
+    </ul>
+</div>
+

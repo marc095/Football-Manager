@@ -1,0 +1,10 @@
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\FootballManager.Domain.dll.config
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\FootballManager.Domain.dll
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\FootballManager.Domain.pdb
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\EntityFramework.dll
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\EntityFramework.xml
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\obj\Debug\FootballManager.Domain.dll
+c:\users\владелец\documents\visual studio 2015\Projects\FootballManager\FootballManager.Domain\obj\Debug\FootballManager.Domain.pdb
+C:\Users\Владелец\Documents\Visual Studio 2015\Projects\FootballManager\FootballManager.Domain\obj\Debug\FootballManager.Domain.csprojResolveAssemblyReference.cache

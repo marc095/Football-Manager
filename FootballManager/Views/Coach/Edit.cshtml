@@ -1,0 +1,20 @@
+﻿@model FootballManager.Models.CoachViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "Coach", FormMethod.Post))
+{
+@Html.HiddenFor(m=>Model.CoachId)
+    <p>Name:</p>
+@Html.EditorFor(m=>Model.Name)
+    <p>Surname:</p>
+@Html.EditorFor(m => Model.Surname)
+    <p>Age:</p>
+@Html.EditorFor(m => Model.Age)
+    <p>Select Team:</p>
+@Html.DropDownListFor(m=>Model.TeamId,(IEnumerable<SelectListItem>)ViewData["AllTeams"])
+ <input type="submit" value="Save" />
+}

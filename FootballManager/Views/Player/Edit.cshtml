@@ -1,0 +1,28 @@
+﻿@model FootballManager.Models.PlayerViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+@using (Html.BeginForm("Edit", "Player", FormMethod.Post))
+{
+    @Html.HiddenFor(m => Model.PlayerId)
+    <p>Photo: </p>
+    @Html.EditorFor(m=> Model.ImageUrl)
+    <p>Name: </p>
+    @Html.EditorFor(m => Model.PlayerName)<br />
+    <p>Surname: </p>
+    @Html.EditorFor(m => Model.Surname)<br />
+    <p>Country</p>
+    @Html.EditorFor(m => Model.Country)<br />
+    <p>Age: </p>
+    @Html.EditorFor(m => Model.Age)<br />
+    <p>Number: </p>
+    @Html.EditorFor(m => Model.PlayerNumber)<br />
+    <p>Team: </p>
+    @Html.DropDownListFor(m=>Model.TeamId, (IEnumerable<SelectListItem>)ViewData["AllTeams"])<br />
+    <p>Birthday</p>
+    @Html.EditorFor(m=> Model.DayBirth)
+
+<input type="submit" value="Save" />
+}

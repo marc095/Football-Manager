@@ -1,0 +1,27 @@
+﻿@model IEnumerable<FootballManager.Domain.Entities.FStadium>
+@{
+    ViewBag.Title = "Index";
+}
+<div style="text-align:  center; margin-left:auto; margin-right:auto;">
+    <h2>Stadiums</h2>
+</div>
+
+<table class="table">
+    <tr>
+        <th class="col-sm-1" align="right">Name</th>
+        <th class="col-sm-1" align="right">Capacity</th>
+        <th class="col-sm-1" align="right"></th>
+        <th class="col-sm-1" align="right"></th>
+    </tr>
+    @foreach (FootballManager.Domain.Entities.FStadium item in Model)
+            {
+        <tr>
+            <td align="left">@item.Name</td>
+            <td align="left">@item.Capacity</td>
+            <td align="left">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+            <td align="left">@Html.ActionLink("Delete", "Delete", new { id = item.Id })</td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("Add new Stadium", "Create")</p>
+<p>@Html.ActionLink("Go Home", "Index", "Home")</p>

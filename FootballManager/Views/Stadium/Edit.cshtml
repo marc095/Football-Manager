@@ -1,0 +1,17 @@
+﻿@model FootballManager.Models.StadiumViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit","Stadium", FormMethod.Post))
+{
+    @Html.HiddenFor(m => Model.StadiumId)
+    <p>Name:</p>
+    @Html.EditorFor(m=>Model.Name)
+    <p>Capacity:</p>
+    @Html.EditorFor(m => Model.Capacity)
+ 
+    <input type="submit" value="Save"/>
+}

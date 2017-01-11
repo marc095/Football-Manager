@@ -1,0 +1,8 @@
+﻿@model FootballManager.Domain.Entities.Team
+@foreach (var item in Model.Players)
+{
+    <ul class="active">
+        <li>@item.Name @item.Surname</li>
+    </ul>
+}
+    

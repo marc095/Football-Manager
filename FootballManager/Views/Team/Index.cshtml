@@ -1,0 +1,29 @@
+﻿@model IEnumerable<FootballManager.Domain.Entities.Team>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div style="text-align:  center; margin-left:auto; margin-right:auto;">
+    <h2>Teams</h2>
+</div>
+<table class="table">
+    <tr>
+        <th class="col-sm-1" align="right">Emblem</th>
+        <th class="col-sm-1" align="right">Name</th>
+        <th class="col-sm-1" align="right">Coach</th>
+        <th class="col-sm-1" align="right">Players</th>
+        <th class="col-sm-1" align="right"></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td align="left"><img alt="Cover" src="@item.ImageUrl" width="80" height="80" /></td>
+            <td align="left">@item.Name</td>
+            <td align="left">@item.Coach.Name @item.Coach.Surname</td>
+            <td align="left">@Html.Partial("TeamPartialPlayers", item)</td>
+            <td align="left">@Html.ActionLink("Edit", "Edit", new { id = item.Id })</td>
+        </tr>
+    }
+</table>
+<p>@Html.ActionLink("Go Home", "Index", "Home")</p>
+

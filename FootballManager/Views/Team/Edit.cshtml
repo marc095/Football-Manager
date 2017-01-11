@@ -1,0 +1,31 @@
+﻿@model FootballManager.Models.TeamViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using(Html.BeginForm())
+{
+    @Html.HiddenFor(m=>Model.TeamId)
+    <p>
+        @Html.LabelFor(m => Model.Name)  
+    </p>
+    <p>
+        @Html.EditorFor(m => Model.Name)
+    </p>
+    @Html.Label("Select coach:")
+    @Html.DropDownListFor(m => Model.CoachId, (IEnumerable<SelectListItem>)ViewData["AllCoaches"])<br />
+    @Html.Label("Select Stadium:")
+
+for(int i = 0; i < Model.ModelStadium.Count(); i++)
+{
+    <p>
+        @Html.HiddenFor(m => Model.ModelStadium[i].Id)
+        @Html.HiddenFor(m => Model.ModelStadium[i].Name)
+        @Html.DisplayFor(m => Model.ModelStadium[i].Name)
+        @Html.EditorFor(m => Model.ModelStadium[i].Checked)
+    </p>
+}
+     <input type="submit" value="Save" />
+}
